@@ -1,0 +1,15 @@
+[Unit]
+Description=DutyBot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=root
+WorkingDirectory=/opt/dutybot2
+ExecStart=/opt/dutybot2/.venv/bin/python /opt/dutybot2/bot.py
+Restart=always
+RestartSec=5
+Environment=TZ=Europe/Moscow
+
+[Install]
+WantedBy=multi-user.target
